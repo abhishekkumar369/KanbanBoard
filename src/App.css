@@ -1,0 +1,67 @@
+/* Base styles */
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white1: #ffffff;
+  --black1: #000000;
+  --textgrey: #808184;
+  --grey1: #dfe4e9;
+  --grey2: #f0f1f4;
+  --grey3: #F8F8FA;
+}
+
+/* Kanban board container */
+.board-details {
+  width: 100%;
+  height: calc(100vh - 68px);
+  background-color: var(--grey2);
+  overflow-x: auto; /* Enable horizontal scrolling */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Kanban board list */
+.board-details-list {
+  display: flex;
+  width: fit-content;
+  overflow-x: auto; /* Scroll if content overflows */
+}
+
+/* Column styles */
+.column {
+  flex: 0 0 auto;
+  margin-right: 15px;
+  width: 250px; /* Default width for larger screens */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 576px) {
+  .board-details {
+    height: auto; /* Adjust height for small screens */
+  }
+  .column {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .column {
+    width: 45%; /* Adjust width for medium screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .column {
+    width: 22%; /* Default width for larger screens */
+  }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
