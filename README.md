@@ -1,5 +1,5 @@
-# Kanban Board Management System
-The Kanban Board Management System is an interactive, React-based web application for managing tasks across different columns. It allows users to efficiently organize, prioritize, and manage their workload. The responsive design ensures optimal user experience across devices, providing a streamlined approach to task management.
+# Kanban Board 
+The Kanban Board application is an interactive, React-based web application for managing tasks across different columns. It allows users to efficiently organize, prioritize, and manage their workload. The responsive design ensures optimal user experience across devices, providing a streamlined approach to task management.
 
 # Key Features:
 (1) User-Friendly Interface:
@@ -42,6 +42,18 @@ The Kanban Board Management System is an interactive, React-based web applicatio
     
     (b) Task Status Updates:
     -> Users can manually update the status of each task with a single click.
+# Folder Structure
+    Copy code
+    ├── public
+    │   ├── index.html        # HTML Template
+    │   └── favicon.ico       # App Icon
+    ├── src
+    │   ├── Assets            # Images and icons
+    │   ├── Components        # Reusable components (Navbar, List)
+    │   ├── App.js            # Main React Component
+    │   ├── App.css           # Global styles
+    │   └── index.js          # Entry point
+    └── package.json          # Project metadata and dependencies
 
 # Tools and Technologies Used:
 (1) Frontend:
@@ -60,17 +72,38 @@ The Kanban Board Management System is an interactive, React-based web applicatio
 
     (a) Axios:
     -> Used for fetching external data from the Kanban API to populate task cards dynamically.
+    -> API URL: https://api.quicksell.co/v1/internal/frontend-assignment
 
 (3) State Management:
     
     (a) React State:
     -> Effectively manages the application's state to ensure seamless transitions and task updates.
+# Future Enhancements
+    (1) User Authentication: Allowing users to log in and manage personal Kanban boards.
+    (2) Task Details Modal: Click on a task to view and edit detailed information.
+    (3) Real-time Collaboration: Multiple users can manage the board simultaneously.
+    (4) Drag-and-Drop Reordering: Enhance task interaction by allowing drag-and-drop across lists.
+    (5) Task Filtering: Provide options to filter tasks based on specific criteria like status, priority, or user.
 
-Contribution:
+# Contribution:
 Contributions are welcome! If you have any suggestions for improvements or new features, feel free to fork the repository and create a pull request. Please ensure your changes are well-documented and tested.
 
-License:
+    (1) Fork the repository:
+    URL : git clone https://github.com/your-username/kanban-board.git
+    
+    (2) Create a feature branch:
+    URL : git checkout -b feature-name
+    
+    (3) Commit your changes:
+    URL : git commit -m "Add feature"
+    
+    (4) Push to the branch:
+    URL : git push origin feature-name
+    
+    (5) Submit a pull request.
+
+# License:
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Contact:
+# Contact:
 For questions or feedback, please reach out via email@example.com.
