@@ -1,11 +1,34 @@
-import React from 'react'
+
+import React, { useEffect, useState } from 'react'
 
 import './List.css'
 import Card from '../Card/Card'
 
-let cardCount = 0;
+
 
 export default function List(props) {
+    const [cardCount2, setCardCount] = useState(0)
+
+    useEffect(() => {
+        let count = 0; // Local variable to track the number of cards
+    
+        props.ticketDetails.map((ticket) => {
+          // Check various conditions and update count accordingly
+          if (ticket.status === props.listTitle || ticket.priority === props.listTitle || ticket.userObj.name === props.listTitle) {
+            count++; // Increment the local count
+            return <Card key={ticket.id} cardDetails={ticket} />; // Return the Card component
+          }
+          return null; // Return null if the condition is not met
+        });
+
+        // cards()
+    
+        // After the map operation, update the state with the final count
+        setCardCount(count);
+    
+      }, [props.ticketDetails, props.listTitle]); 
+
+
   return (
     <>
         <div className="list-container">
@@ -62,7 +85,7 @@ export default function List(props) {
                             }[props.groupValue]
                         }
                     </div>
-                    <div className="list-sum">{cardCount}</div>
+                    <div className="list-sum">{cardCount2}</div>
                 </div>
                 <div className="list-header-right">
                     <div className="list-add-item">
@@ -78,19 +101,21 @@ export default function List(props) {
                 {
                     props.ticketDetails.map(ticket => {
                         if(ticket.status === props.listTitle){
-                            cardCount++;
+                            //cardCount++;
                             return(<Card cardDetails={ticket} />)
                         }
                         else if(ticket.priority === props.listTitle){
-                            cardCount++;
+                            //cardCount++;
                             return(<Card cardDetails={ticket} />)
                         }
                         else if(ticket.userObj.name === props.listTitle){
-                            cardCount++;
+                            // cardCount++;
                             return(<Card cardDetails={ticket} />)
                         }
                         return null
-                    }, cardCount = 0)
+                    })
+
+                    // setCardCount(1)
                     
                 }
             </div>
